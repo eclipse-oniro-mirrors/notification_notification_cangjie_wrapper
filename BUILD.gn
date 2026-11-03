@@ -1,4 +1,4 @@
-# Copyright (c) 2025 Huawei Device Co., Ltd.
+# Copyright (c) 2025-2026 Huawei Device Co., Ltd.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -14,6 +14,7 @@
 import("//build/templates/cangjie/cjc.gni")
 
 notification_cangjie_wrapper_packages_ohos = [
+    "//base/notification/notification_cangjie_wrapper/ohos/notification:ohos.notification_manager",
     "//base/notification/notification_cangjie_wrapper/ohos/common_event_manager:ohos.common_event_manager",
     "//base/notification/notification_cangjie_wrapper/ohos/value_type:ohos.value_type",
     "//base/notification/notification_cangjie_wrapper/ohos/common_event_subscribe_info:ohos.common_event_subscribe_info",
@@ -22,6 +23,11 @@ notification_cangjie_wrapper_packages_ohos = [
     "//base/notification/notification_cangjie_wrapper/ohos/common_event_data:ohos.common_event_data"
 ]
 
+notification_cangjie_wrapper_packages_kit = [
+    "//base/notification/notification_cangjie_wrapper/kit/NotificationKit:kit.NotificationKit"
+]
+
 copy_ohos_cangjie_sdk_api_lib("copy_sdk_notification_cangjie_libs") {
   ohos_inputs = notification_cangjie_wrapper_packages_ohos
+  kit_inputs = notification_cangjie_wrapper_packages_kit
 }

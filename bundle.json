@@ -1,44 +1,52 @@
 {
-    "name": "@ohos/notification_cangjie_wrapper",
-    "description": "The notification_notification_cangjie_wrapper provides common event management capabilities for developers on OpenHarmony.",
-    "version": "6.1",
-    "license": "Apache License 2.0",
-    "publishAs": "code-segment",
-    "segment": {
-        "destPath": "base/notification/notification_cangjie_wrapper"
+ "name": "@ohos/notification_cangjie_wrapper",
+ "description": "The notification_notification_cangjie_wrapper provides common event management capabilities for developers on OpenHarmony.",
+ "version": "6.1",
+ "license": "Apache License 2.0",
+ "publishAs": "code-segment",
+ "segment": {
+  "destPath": "base/notification/notification_cangjie_wrapper"
+ },
+ "dirs": {},
+ "scripts": {},
+ "component": {
+  "name": "notification_cangjie_wrapper",
+  "subsystem": "notification",
+  "syscap": [],
+  "features": [],
+  "adapted_system_type": [
+   "standard"
+  ],
+  "rom": "400KB",
+  "ram": "432KB",
+  "deps": {
+   "components": [
+    "ability_cangjie_wrapper",
+    "cangjie_ark_interop",
+    "common_event_service",
+    "distributed_notification_service",
+    "hiviewdfx_cangjie_wrapper",
+    "multimedia_cangjie_wrapper"
+   ]
+  },
+  "build": {
+   "sub_component": [
+    "//base/notification/notification_cangjie_wrapper/ohos/common_event_manager:ohos.common_event_manager",
+    "//base/notification/notification_cangjie_wrapper/ohos/notification:ohos.notification_manager",
+    "//base/notification/notification_cangjie_wrapper/kit/NotificationKit:kit.NotificationKit"
+   ],
+   "inner_kits": [
+    {
+     "name": "//base/notification/notification_cangjie_wrapper/ohos/common_event_manager:ohos.common_event_manager"
     },
-    "dirs": {},
-    "scripts": {},
-    "component": {
-        "name": "notification_cangjie_wrapper",
-        "subsystem": "notification",
-        "syscap": [],
-        "features": [],
-        "adapted_system_type": [
-            "standard"
-        ],
-        "rom": "400KB",
-        "ram": "432KB",
-        "deps": {
-            "components": [
-                "cangjie_ark_interop",
-                "common_event_service",
-                "hiviewdfx_cangjie_wrapper"
-            ]
-        },
-        "build": {
-            "sub_component": [
-                "//base/notification/notification_cangjie_wrapper/ohos/common_event_manager:ohos.common_event_manager"
-            ],
-            "inner_kits": [
-                {
-                    "name": "//base/notification/notification_cangjie_wrapper/ohos/common_event_manager:ohos.common_event_manager"
-                },
-                {
-                    "name": "//base/notification/notification_cangjie_wrapper:copy_sdk_notification_cangjie_libs"
-                }
-            ],
-            "test": []
-        }
+    {
+     "name": "//base/notification/notification_cangjie_wrapper:copy_sdk_notification_cangjie_libs"
+    },
+    {
+     "name": "//base/notification/notification_cangjie_wrapper:copy_sdk_notification_cangjie_libs_kit"
     }
+   ],
+   "test": []
+  }
+ }
 }
